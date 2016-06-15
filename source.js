@@ -14,7 +14,6 @@ URLS.forEach(URL => {
     bod
    ) => {
     if (err) console.error(err);
-    console.log(res.statusCode);
     findInfo(bod);
   })
 })
@@ -33,6 +32,7 @@ function findInfo (res) {
   const priceInterval = capitalizeFirstLetter(priceArr[2], 'Day');
   const features = $('.service-summary-features-and-benefits')[0];
   const benefits = $('.service-summary-features-and-benefits')[1];
+  const serviceName = $('.page-heading-smaller h1').text();
 
   serviceId++
   const outputJson = {
@@ -48,13 +48,15 @@ function findInfo (res) {
     "priceMax": price,
     "pricingDocumentURL": $($('.document-list-item a')[0]).attr('href'),
     "minimumContractPeriod": priceInterval,
-    "serviceName": $('.page-heading-smaller h1').text(),
+    "serviceName": serviceName,
     "vatIncluded": true,
     "serviceFeatures": $(features).find('li').get().map((e) => e.children[0].data),
     "priceMin": price,
     "serviceBenefits": $(benefits).find('li').get().map((e) => e.children[0].data)
   };
 
-  console.log(outputJson);
-  fs.writeFileSync(`json/${serviceId}.json`, JSON.stringify(outputJson));
+  fs.writeFile(`json/${serviceId}.json`, JSON.stringify(outputJson), err => {
+    if (err) throw err;
+    console.log(`Saved: ${serviceName}`) 
+  });
 }
