@@ -68,23 +68,3 @@ function findInfo(res) {
   console.log(outputJson);
   _fs2.default.writeFileSync('./' + serviceId + '.json', JSON.stringify(outputJson));
 }
-
-// {
-//  "serviceSummary": "tdgsg",
-//  "priceUnit": "Unit",
-//  "priceInterval": "Minute",
-//  "priceMax": "9",
-//  "pricingDocumentURL": "http://localhost:5003/suppliers/assets/inoket-1/submissions/700000/6-pricing-document-2016-06-09-1144.pdf",
-//  "minimumContractPeriod": "Hour",
-//  "serviceName": "test",
-//  "vatIncluded": true,
-//  "serviceFeatures": [
-//   "sdas",
-//   "asdad"
-//   ],
-//  "priceMin": "5",
-//  "serviceBenefits": [
-//    "asdad",
-//    "sdad"
-//  ]
-// }

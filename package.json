@@ -1,0 +1,28 @@
+{
+  "name": "gcloud-scraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "cheerio": "~0.20.0",
+    "request": "~2.72.0"
+  },
+  "devDependencies": {
+    "babel-cli": "~6.10.1",
+    "babel-preset-es2015": "~6.9.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "babel source.js --watch --out-file index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pebblecode/gcloud-scraper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pebblecode/gcloud-scraper/issues"
+  },
+  "homepage": "https://github.com/pebblecode/gcloud-scraper#readme"
+}
