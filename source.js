@@ -56,5 +56,5 @@ function findInfo (res) {
   };
 
   console.log(outputJson);
-  fs.writeFileSync(`./${serviceId}.json`, JSON.stringify(outputJson));
+  fs.writeFileSync(`json/${serviceId}.json`, JSON.stringify(outputJson));
 }
